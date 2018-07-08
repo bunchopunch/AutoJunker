@@ -138,19 +138,24 @@ local function CreateResearchIcon(_InvRowControl, _bIsAtTradingHouse)
     cCntrlIcon:SetDimensions(iconSize, iconSize)
     local isGrid = false
 
-    --[[
+    --[[ FIXME: Restore proper gridview support
     if AutoJunker.loadedAddons["InventoryGridView"] then
         local inventoryId = PLAYER_INVENTORY.bagToInventoryType[iBagId]
+
+        -- InventoryGridViewSettings retuns nil. Not sure how to get refernce these settings in the current API version.
         isGrid = InventoryGridViewSettings:IsGrid(inventoryId)
     end
+    ]]
+
+    isGrid = true
 
     if isGrid then
         cCntrlIcon:SetAnchor(BOTTOMRIGHT, _InvRowControl, BOTTOMRIGHT, 0, -5)
     else
         cCntrlIcon:SetAnchor(TOPLEFT, cCntrlName, TOPRIGHT, 0, 0)
     end
-    ]]
-    cCntrlIcon:SetAnchor(BOTTOMRIGHT, _InvRowControl, BOTTOMRIGHT, 0, -5) -- FIXME: Restore proper gridview support
+
+    cCntrlIcon:SetAnchor(BOTTOMRIGHT, _InvRowControl, BOTTOMRIGHT, 0, -5) 
     
     if iItemType == ITEMTYPE_RECIPE then 
         tNeedInfo = LN4R:DoAnyPlayersNeedRecipe(lItemLink)

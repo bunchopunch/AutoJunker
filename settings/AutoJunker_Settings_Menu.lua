@@ -2855,11 +2855,20 @@ d("rlinkCT: "..rlinkCT)
                 
                 [3] = {
                     type = "checkbox",
-                    name = "Junk Solvents",
+                    name = "Junk Potion Solvents",
                     tooltip = "When ON All Solvents will be junked.",
                     default = false,
-                    getFunc = function() return AutoJunker.SavedVariables[ITEMTYPE_ALCHEMY_BASE]["JUNK"] end,
-                    setFunc = function(iValue) AutoJunker.SavedVariables[ITEMTYPE_ALCHEMY_BASE]["JUNK"] = iValue end,
+                    getFunc = function() return AutoJunker.SavedVariables[ITEMTYPE_POTION_BASE]["JUNK"] end,
+                    setFunc = function(iValue) AutoJunker.SavedVariables[ITEMTYPE_POTION_BASE]["JUNK"] = iValue end,
+                },
+
+                [4] = {
+                    type = "checkbox",
+                    name = "Junk Poison Solvents",
+                    tooltip = "When ON All Solvents will be junked.",
+                    default = false,
+                    getFunc = function() return AutoJunker.SavedVariables[ITEMTYPE_POISON_BASE]["JUNK"] end,
+                    setFunc = function(iValue) AutoJunker.SavedVariables[ITEMTYPE_POISON_BASE]["JUNK"] = iValue end,
                 },
             },
             reference = "AutoJunker_Alchemy_SubMenu",
