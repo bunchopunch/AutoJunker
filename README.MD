@@ -8,8 +8,8 @@ I'm just putting this here for a couple friends and it may have issues. It's bee
 
 ## Issues:
 
+- **At the moment, this version isn't quite working due to Inventory Grid View**. Set `AutoJunker_Callbacks.lua line 150` to `false` if you don't use InventoryGridViewSettings, and the add-on may work.
 - I really didn't put much work at all in to the potions, poisons, or jewelrycrafting menus. They may not work properly.
-- **This version is currently hard-coded to work with InventoryGridViewSettings**. Set `AutoJunker_Callbacks.lua line 150` to false if you don't use InventoryGridViewSettings.
 
 ## Installation
 
